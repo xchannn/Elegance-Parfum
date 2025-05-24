@@ -24,6 +24,15 @@
             {{ link.name }}
             <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
           </router-link>
+          <router-link 
+            to="/cart"
+            class="relative text-gray-700 hover:text-blue-600 transition-colors duration-300 group"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007.5 17h9a1 1 0 00.9-.55L21 13M7 13V6a1 1 0 011-1h5m-6 8a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z" />
+            </svg>
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
+          </router-link>
         </div>
       </nav>
     </header>
@@ -42,7 +51,6 @@
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Perfumes', path: '/products' },
-  { name: 'Cart', path: '/cart' },
   { name: 'Login', path: '/login' },
   { name: 'Register', path: '/register' }
 ];
