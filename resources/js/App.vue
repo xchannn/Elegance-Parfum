@@ -1,16 +1,16 @@
 <template>
   <div class="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-white to-purple-50">
     <header class="w-full bg-white/80 backdrop-blur-sm border-b border-gray-200/50 shadow-sm sticky top-0 z-30">
-      <nav class="max-w-7xl mx-auto flex items-center justify-between h-20 px-4">
-        <router-link to="/" class="flex items-center space-x-3 group">
-          <div class="relative w-10 h-10 flex items-center justify-center">
+      <nav class="max-w-7xl mx-auto flex items-center justify-between h-14 px-4">
+        <router-link to="/" class="flex items-center space-x-2 group">
+          <div class="relative w-8 h-8 flex items-center justify-center">
             <img 
               src="/Élégance Parfum Logo Design.png" 
               alt="Elégance Parfum Logo" 
-              class="h-8 w-8 transition-transform duration-300 group-hover:scale-110" 
+              class="h-7 w-7 transition-transform duration-300 group-hover:scale-110" 
             />
           </div>
-          <span class="font-semibold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+          <span class="font-semibold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
             Elégance Parfum
           </span>
         </router-link>

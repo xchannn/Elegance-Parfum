@@ -9,7 +9,7 @@
     </div>
 
     <!-- Main Content -->
-    <div class="relative min-h-screen flex flex-col items-center justify-center px-4 py-8">
+    <div class="relative max-w-5xl mx-auto px-4 pt-8 pb-8">
       <!-- Hero Section -->
       <section class="text-center max-w-3xl mx-auto">
         <div class="mb-4" data-aos="fade-up" data-aos-delay="5000">
@@ -18,7 +18,7 @@
           </h4>
         </div>
 
-        <br><p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed" data-aos="fade-up" data-aos-delay="5000">
+        <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed" data-aos="fade-up" data-aos-delay="5000">
           Discover our collection of exquisite fragrances that capture the essence of elegance and sophistication
         </p>
 

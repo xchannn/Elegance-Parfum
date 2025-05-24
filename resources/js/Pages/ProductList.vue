@@ -9,9 +9,9 @@
     </div>
 
     <!-- Main Content -->
-    <div class="relative container mx-auto px-4 py-8">
+    <div class="relative container mx-auto px-4 pt-1 pb-1">
       <!-- Search Section -->
-      <section class="flex flex-col items-center justify-center text-center py-4 mb-12">
+      <section class="flex flex-col items-center justify-center text-center py-2 mb-10">
         <div class="relative w-full max-w-2xl" data-aos="fade-in" data-aos-duration="3000">
           <input 
             type="text" 
