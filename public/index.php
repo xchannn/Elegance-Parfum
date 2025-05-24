@@ -18,3 +18,5 @@ require __DIR__.'/../vendor/autoload.php';
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 $app->handleRequest(Request::capture());
+
+// This section should be removed as it's causing a syntax error in the PHP file.
