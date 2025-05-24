@@ -1,28 +1,59 @@
 <template>
-  <div class="min-h-screen flex flex-col bg-gradient-to-b from-blue-50 to-white">
-    <header class="w-full bg-white/80 backdrop-blur border-b border-gray-200 shadow-sm sticky top-0 z-30">
-      <nav class="max-w-7xl mx-auto flex items-center justify-between h-16 px-4">
-        <div class="flex items-center space-x-4">
-          <img src="/Élégance Parfum Logo Design.png" alt="Elégance Parfum Logo" class="h-8 w-8 mr-2" />
-          <span class="font-semibold text-xl tracking-tight text-gray-900">Elégance Parfum</span>
-        </div>
-        <div class="flex items-center space-x-6 text-gray-700 font-medium">
-          <router-link to="/" class="hover:text-blue-600 transition">Home</router-link>
-          <router-link to="/products" class="hover:text-blue-600 transition">Perfumes</router-link>
-          <router-link to="/cart" class="hover:text-blue-600 transition">Cart</router-link>
-          <router-link to="/login" class="hover:text-blue-600 transition">Login</router-link>
-          <router-link to="/register" class="hover:text-blue-600 transition">Register</router-link>
+  <div class="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <header class="w-full bg-white/80 backdrop-blur-sm border-b border-gray-200/50 shadow-sm sticky top-0 z-30">
+      <nav class="max-w-7xl mx-auto flex items-center justify-between h-20 px-4">
+        <router-link to="/" class="flex items-center space-x-3 group">
+          <div class="relative w-10 h-10 flex items-center justify-center">
+            <img 
+              src="/Élégance Parfum Logo Design.png" 
+              alt="Elégance Parfum Logo" 
+              class="h-8 w-8 transition-transform duration-300 group-hover:scale-110" 
+            />
+          </div>
+          <span class="font-semibold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+            Elégance Parfum
+          </span>
+        </router-link>
+        <div class="flex items-center space-x-8">
+          <router-link 
+            v-for="(link, index) in navLinks" 
+            :key="index"
+            :to="link.path"
+            class="relative text-gray-700 font-medium hover:text-blue-600 transition-colors duration-300 group"
+          >
+            {{ link.name }}
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
+          </router-link>
         </div>
       </nav>
     </header>
     <main class="flex-1 w-full max-w-7xl mx-auto px-4 py-8">
       <router-view />
     </main>
-    <footer class="w-full bg-white/80 border-t border-gray-200 py-6 text-center text-gray-500 text-sm">
-      &copy; 2025 Elégance Parfum. All rights reserved.
+    <footer class="w-full bg-white/80 backdrop-blur-sm border-t border-gray-200/50 py-6 text-center">
+      <p class="text-gray-500 text-sm bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+        &copy; 2025 Elégance Parfum. All rights reserved.
+      </p>
     </footer>
   </div>
 </template>
+
 <script setup>
-// No script needed for layout
-</script> 
+const navLinks = [
+  { name: 'Home', path: '/' },
+  { name: 'Perfumes', path: '/products' },
+  { name: 'Cart', path: '/cart' },
+  { name: 'Login', path: '/login' },
+  { name: 'Register', path: '/register' }
+];
+</script>
+
+<style scoped>
+.router-link-active {
+  @apply text-blue-600;
+}
+
+.router-link-active::after {
+  @apply w-full;
+}
+</style> 
