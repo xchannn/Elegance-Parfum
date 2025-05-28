@@ -39,17 +39,21 @@
 <script setup>
 import { currency } from '../utils/format.js';
 import { defineProps } from 'vue';
+import { useCartStore } from '../stores/cart';
+import { useRouter } from 'vue-router';
 
 const props = defineProps(['product']);
+const cart = useCartStore();
+const router = useRouter();
 
 const addToCart = () => {
-  // TODO: Implement add to cart functionality
-  console.log('Adding to cart:', props.product);
+  cart.addItem(props.product);
+  // Show success message or notification here
 };
 
 const buyNow = () => {
-  // TODO: Implement buy now functionality (e.g., redirect to checkout with this product)
-  console.log('Buying now:', props.product);
+  cart.addItem(props.product);
+  router.push('/checkout');
 };
 </script>
 
