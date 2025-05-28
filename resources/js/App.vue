@@ -31,6 +31,13 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 007.5 17h9a1 1 0 00.9-.55L21 13M7 13V6a1 1 0 011-1h5m-6 8a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z" />
             </svg>
+            <!-- Cart Badge -->
+            <span 
+              v-if="cart.totalItems > 0"
+              class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold"
+            >
+              {{ cart.totalItems }}
+            </span>
             <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
           </router-link>
         </div>
@@ -48,12 +55,22 @@
 </template>
 
 <script setup>
+import { useCartStore } from './stores/cart';
+import { onMounted } from 'vue';
+
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Perfumes', path: '/products' },
   { name: 'Login', path: '/login' },
   { name: 'Register', path: '/register' }
 ];
+
+const cart = useCartStore();
+
+onMounted(() => {
+  cart.loadFromLocalStorage();
+});
+
 </script>
 
 <style scoped>
